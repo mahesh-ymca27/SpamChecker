@@ -7,7 +7,7 @@ import nltk
 nltk.download('stopwords')  # Download once at the start
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 
 # Load the trained model and vectorizer once at the start of the app
