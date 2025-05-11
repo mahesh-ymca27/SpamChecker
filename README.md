@@ -76,7 +76,7 @@ The `app.py` file is the core of the **SpamChecker** project. It integrates the 
    app = Flask(__name__)
    ```
 
-3. **Text Preprocessing Function**
+3. **Text Preprocessing Function (Note : It wrap in a file named Utils.py to ensure deployment on Render if You dont want to deploy online use localy then dont wrap it up use it as it is)**
 
    * A custom function `process_text()` is defined to:
 
@@ -131,6 +131,10 @@ The `app.py` file is the core of the **SpamChecker** project. It integrates the 
 ---
 
 📌 **Note**: The Flask server runs locally by default at `http://127.0.0.1:5000/`. You can modify the host or port if deploying.
+## 🚀 Live Demo
+
+[Click here to use SpamChecker](https://spamchecker-i1zo.onrender.com/)
+
 
 
 #### 3: Implement Index.html
@@ -173,4 +177,10 @@ This model will running on a web browser on the localhost. The last task is to d
 
 *B.Tech | Computer Engineering | J.C Bose University of Science and Technology YMCA Fbd.
 mhesh.021@gmail.com*
+
+## 🖼️ Screenshot
+
+## 🖼️ Screenshot
+
+![SpamChecker Screenshot](static/img/scr/scr-img.png)
 
