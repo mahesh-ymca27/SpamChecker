@@ -1,0 +1,26 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+
+# VS Code settings
+.vscode/
+
+# NLTK data (if downloaded manually)
+nltk_data/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+
+# Model files (optional - only if you don’t want to push them)
+# finalized_model.sav
+# vectorizer.pkl

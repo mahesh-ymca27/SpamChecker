@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>SpamCheckr - Email Spam Checker</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../static/img/core-img/message.png">
+
+    <!-- Core Stylesheet -->
+    <link href="../static/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="../static/css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area animated">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Menu Area Start -->
+                <div class="col-12 col-lg-10">
+                    <div class="menu_area">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="#">SpamChecker.</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            <!-- Menu Area -->
+                            <div class="collapse navbar-collapse" id="ca-navbar">
+                                <ul class="navbar-nav ml-auto" id="nav">
+                                    <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#features">Technology</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#screenshot">ML Model</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#pricing">Dig-IN</a></li>
+                                    </ul>
+                                <div class="sing-up-button d-lg-none">
+                                    <a href="#">Project Report</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Project Report btn -->
+                <div class="col-12 col-lg-2">
+                    <div class="sing-up-button d-none d-lg-block">
+                        <a href="#">Project Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Wellcome Area Start ***** -->
+    <!-- ***** Wellcome Area Start ***** -->
+<section class="wellcome_area clearfix" id="home">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 col-md">
+                <div class="wellcome-heading">
+                   <p style="font-size: 1.5em ">Result - Our Smart Tool predicted that your text is:</p>
+                        
+                </div>
+                <div class="wellcome-heading">
+                    <!-- Check the prediction value and display the result accordingly -->
+                    {% if prediction == 'spam' %}
+                        <h2 style="color: white;">Spam</h2>
+                    {% elif prediction == 'ham' %}
+                        <h2 style="color: white;">Not a Spam!</h2>
+                    {% endif %}
+                </div>
+
+                <!-- Redirect message -->
+                <p id="redirect-message" style="font-size: 1.2em; color: white;">You will be redirected back in a few seconds...</p>
+
+                <script>
+                    // Set a timer to go back after 5 seconds
+                    setTimeout(function() {
+                        window.history.back(); // Go back to the previous page
+                    }, 3000);  // Delay in milliseconds (3000ms = 3 seconds)
+                </script>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Welcome thumb -->
+    <div class="welcome-thumb wow fadeInDown" " style="text-align: center; margin-top: 20px;">
+        <!-- Image path updated to use url_for -->
+        <img src="{{ url_for('static', filename='img/bg-img/1.1.png') }}" alt="Spam Checker" style="max-width: 100%; height: auto;">
+    </div>
+</section>
+
+    <!-- ***** Wellcome Area End ***** -->
+
+      <!-- ***** Special Area Start ***** -->
+      <section class="special-area bg-white section_padding_100" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading Area -->
+                    <div class="section-heading text-center">
+                        <h2>SpamChecker.</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="single-icon">
+                            <i class="ti-mobile" aria-hidden="true"></i>
+                        </div>
+                        <h4>Easy to use</h4>
+                        <p>Pretty complex tools aembeded in simple designs and yet functional. Intended for regular users keeping their ease of use in mind.</p>
+                    </div>
+                </div>
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="single-icon">
+                            <i class="ti-ruler-pencil" aria-hidden="true"></i>
+                        </div>
+                        <h4>Aim</h4>
+                        <p>To identify new Potential Spam E-Mails from known & unknown sources.<br> This is what going to be a speciality of our product.</p>
+                    </div>
+                </div>
+                <!-- Single Special Area -->
+                <div class="col-12 col-md-4">
+                    <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="single-icon">
+                            <i class="ti-settings" aria-hidden="true"></i>
+                        </div>
+                        <h4>Powerful Technology</h4>
+                        <p>As spammers are getting smarter each day, this highly efficient Machine Learning Algorithm will help you tackle and knock out those Spammers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Special Description Area -->
+        <div class="special_description_area mt-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="special_description_img">
+                            <img src="../static/img/bg-img/2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-5 ml-xl-auto">
+                        <div class="special_description_content">
+                            <h2>Our Best SpamChecker for You!</h2>
+                            <p>Spamming is a big problem! Anyone who is connected to internet faces this problem now and then, but with Corporates, it becomes a serious problem. Phishing attacks, greedy traps and many create a havoc if not handled properly. <br>Our product SpamChecker is a solution for these Spams. Through our Intelligent Web- Based Product, you can find Spam E-Mails and can label them as Spam for future reference</p>
+                            <div class="app-download-area">
+                                <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
+                                    <!-- Google Store Btn -->
+                                    <a href="#">
+                                        <i class="fa fa-github"></i>
+                                        <p class="mb-0"><span>Project Code available on</span> GitHub</p>
+                                    </a>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Special Area End ***** -->
+
+    <!-- ***** Awesome Features Start ***** -->
+    <section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Heading Text -->
+                    <div class="section-heading text-center">
+                        <h2>Technology used</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-layout" aria-hidden="true"></i>
+                        <h5>HTML</h5>
+                        <p>HTML is the standard markup language used to create web pages. It defines the structure of a webpage using tags and elements such as headings, paragraphs, links, images, and more. HTML is essential for web development, providing the basic foundation for designing and displaying content on the internet...</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-wand" aria-hidden="true"></i>
+                        <h5>Javascript</h5>
+                        <p>JavaScript is a scripting language used to create dynamic content on web pages, such as interactive forms, animations, and real-time updates. It runs in the browser and works with HTML and CSS to enhance user experience and web functionality.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-pulse" aria-hidden="true"></i>
+                        <h5>Machine Learning</h5>
+                        <p>The model detects, if a text message/mail is spam(1) or ham(0) using techniques like tokenizaton, multinomial naive bayes classifier, etc.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-palette" aria-hidden="true"></i>
+                        <h5>CSS</h5>
+                        <p>CSS (Cascading Style Sheets) is used to style and design HTML elements on web pages. It controls layout, colors, fonts, spacing, and responsiveness, enhancing visual presentation and user experience.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-link" aria-hidden="true"></i>
+                        <h5>Flask</h5>
+                        <p>Flask is a lightweight Python web framework used to build web applications. It handles routing, templates, and request processing, making it ideal for connecting front-end forms to machine learning models.</p>
+                    </div>
+                </div>
+                <!-- Single Feature Start -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature">
+                        <i class="ti-server" aria-hidden="true"></i>
+                        <h5>Dataset</h5>
+                        <p>The dataset used is a .csv file containing labeled text messages as spam or ham. It is used to train and test the model with features extracted for accurate classification.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ***** Awesome Features End ***** -->
+
+    <!-- ***** Video Area Start ***** -->
+    <div class="image-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="image-area" style="background-image: url(../static/img/bg-img/pic.png);">  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Video Area End ***** -->
+
+    <!-- ***** Cool Facts Area Start ***** -->
+    <section class="cool_facts_area clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="counter-area">
+                            <h3><span class="counter">97.3</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-android-bulb"></i>
+                            <p>Accuracy <br> Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="counter-area">
+                            <h3><span class="counter">0.98</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-happy-outline"></i>
+                            <p>Precision <br> Score</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="counter-area">
+                            <h3><span class="counter">0.98</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-android-time"></i>
+                            <p>f1 <br>score</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Cool Fact-->
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="counter-area">
+                            <h3><span class="counter">1</span></h3>
+                        </div>
+                        <div class="cool-facts-content">
+                            <i class="ion-person"></i>
+                            <p>Active <br>Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Cool Facts Area End ***** -->
+
+    <!-- ***** App Screenshots Area Start ***** -->
+    <section class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Heading Text  -->
+                    <div class="section-heading">
+                        <h2>ML Model Accuracy</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- ***** Video Area Start ***** -->
+    <div class="video-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Video Area Start -->
+                    <div class="video-area" style="background-image: url(../static/img/scr-img/Mlmodel.png);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Video Area End ***** -->
+
+    </section>
+    <!-- ***** App Screenshots Area End *****====== -->
+
+    <!-- ***** Pricing Plane Area Start *****==== -->
+    <section class="pricing-plane-area section_padding_100_70 clearfix" id="pricing">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                <!-- Heading Text  -->
+                    <div class="section-heading text-center">
+                        <h2>Dig-IN to Tech.</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <!-- Package Price  -->
+                    <div class="single-price-plan text-center">
+                        <!-- Package Text  -->
+                        <div class="package-plan">
+                            <h5>User</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                <h4>Interface</h4>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="package-description">
+                            <p>HTML</p>
+                            <p>CSS</p>
+                            <p>Javascript</p>
+                            <p>User-friendly</p>
+                            <p>Light Interface</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <!-- Package Price  -->
+                    <div class="single-price-plan text-center">
+                        <!-- Package Text  -->
+                        <div class="package-plan">
+                            <h5>Flask</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                
+                                <h4>Framework</h4>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="package-description">
+                            <p>Light-Weight</p>
+                            <p>Modular</p>
+                            <p>Flexible</p>
+                            <p>Version 3.6</p>
+                            <p>-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <!-- Package Price  -->
+                    <div class="single-price-plan text-center">
+                        <!-- Package Text  -->
+                        <div class="package-plan">
+                            <h5>Machine Learing</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                
+                                <h4>Algorithm</h4>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="package-description">
+                            <p>Detection Model</p>
+                            <p>Tokenisation</p>
+                            <p>Naive Bayes Classifier</p>
+                            <p>High Accuracy</p>
+                            <p>High F1 Score</p>
+                        </div>
+                   </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <!-- Package Price  -->
+                    <div class="single-price-plan text-center">
+                        <!-- Package Text  -->
+                        <div class="package-plan">
+                            <h5>Extensive</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                
+                                <h4>Dataset</h4>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="package-description">
+                            <p>Labelled Data</p>
+                            <p>5000+ Messages</p>
+                            <p>Tagged as Spam &amp; Ham</p>
+                            <p>in Text Format</p>
+                            <p>Stored as .csv file</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!-- ***** Pricing Plane Area End ***** -->
+
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        
+        </div>
+        <div class="footer-menu">
+            <nav>
+                <ul>
+                    <li><a href="#">Project on GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Foooter Text-->
+        <div class="copyright-text">
+           
+            <p>Copyright ©2025 SpamChecker. </p>
+        </div>
+    </footer>
+    <!-- ***** Footer Area Start ***** -->
+
+    <!-- Jquery-2.2.4 JS -->
+    <script src="../static/js/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../static/js/popper.min.js"></script>
+    <!-- Bootstrap-4 Beta JS -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="../static/js/plugins.js"></script>
+    <!-- Slick Slider Js-->
+    <script src="../static/js/slick.min.js"></script>
+    <!-- Footer Reveal JS -->
+    <script src="../static/js/footer-reveal.min.js"></script>
+    <!-- Active JS -->
+    <script src="../static/js/active.js"></script>
+</body>
+
+</html>
+
