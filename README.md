@@ -45,7 +45,7 @@ SpamChecker/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/SpamChecker.git
+   git clone https://github.com/mahesh-ymca27/SpamChecker.git
    cd SpamChecker
    ```
 
@@ -180,7 +180,6 @@ mhesh.021@gmail.com*
 
 ## 🖼️ Screenshot
 
-## 🖼️ Screenshot
+![SpamChecker Screenshot](scr-img.png)
 
-![SpamChecker Screenshot](static/img/scr/scr-img.png)
 
