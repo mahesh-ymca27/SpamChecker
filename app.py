@@ -8,17 +8,7 @@ nltk.download('stopwords')  # Download once at the start
 
 
 app = Flask(__name__)
-# Tokenization function
-def process_text(text):
-    # Remove punctuation
-    nopunc = [char for char in text if char not in string.punctuation]
-    nopunc = ''.join(nopunc)
-    
-    # Remove stop words
-    clean_words = [word for word in nopunc.split() if word.lower() not in stopwords.words('english')]
-    
-    # Return clean words
-    return clean_words
+
 
 # Load the trained model and vectorizer once at the start of the app
 classifier = joblib.load('finalized_model.sav')  # Load the saved Naive Bayes model

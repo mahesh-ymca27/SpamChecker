@@ -9,6 +9,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
+from utils import process_text # ✅ Import the function from utils.py
+
+# Download stopwords once
+nltk.download('stopwords')
+
 # Load the data
 df = pd.read_csv('spam_ham_dataset.csv')
 
@@ -17,21 +22,6 @@ df.drop_duplicates(inplace=True)
 
 # Check for missing data
 df.isnull().sum()
-
-# Download stopwords
-nltk.download('stopwords')
-
-# Tokenization function
-def process_text(text):
-    # Remove punctuation
-    nopunc = [char for char in text if char not in string.punctuation]
-    nopunc = ''.join(nopunc)
-    
-    # Remove stop words
-    clean_words = [word for word in nopunc.split() if word.lower() not in stopwords.words('english')]
-    
-    # Return clean words
-    return clean_words
 
 # Initialize and fit the CountVectorizer
 cv = CountVectorizer(analyzer=process_text)
